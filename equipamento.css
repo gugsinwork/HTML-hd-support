@@ -17,7 +17,7 @@ body{
 
 .container-equipamento{
     margin-top: 10vh;
-    height: 500px;
+    height: 370px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +28,7 @@ body{
     border-radius: 30px;
 }
 .menu-cadastro{
-    bottom: 7vh;
+    bottom: 5vh;
     position: relative;
     display: flex;
     justify-content: center;
@@ -127,19 +127,6 @@ body{
     justify-content: center;
 }
 
-.checkbox-style input{
-    
-    all: unset;
-    border: 1px solid black;
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-}
-.checkbox-style input:checked{
-    background-color: blue;
-    width: 25px;
-    height: 25px;
-}
 @font-face {
     font-family: Agrandir;
     src: url(fonts/Agrandir-Regular.otf);
