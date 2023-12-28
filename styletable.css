@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Questrial;
+    src: url(fonts/Questrial-Regular.ttf);
+}
+
+@font-face {
+    font-family: Agrandir-regular;
+    src: url(fonts/Agrandir-Regular.otf);
+}
+
+@font-face {
+    font-family: Agrandir;
+    src: url(fonts/Agrandir-Narrow.otf);
+}
+
+.body-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #046de1, #869cdd);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.TableContainer {
+    margin-top: 10vh;
+    display: flex;
+    height: 500px;
+    flex-direction: column;
+}
+.background-table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    height: 500px;
+    width: 140vh; 
+    box-shadow: 0px 1px 12px -3px rgba(0, 0, 0, 1);
+    border-radius: 0px 0px 33px 32px;
+    background-color: white;
+}
+
+.tr-style {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    width: 80%;
+}
+
+.tr-style th {
+    border-top: #0b3057 2px solid;
+}
+
+.tbody-style {
+    font-size: 20px;
+    text-align: center;
+    font-family: Questrial;
+    white-space: nowrap;
+}
+.tbody-style td{
+    word-wrap: break-word;
+}
+
+.table-menu {
+    background-color: #0b3057;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.table-menu h1 {
+    font-family: Questrial;
+    font-weight: 100;
+    font-size: 20px;
+    margin-left: 10px
+}
+
+.table-menu a {
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+}
+
+.table-menu input {
+    border-style: none;
+    outline: 0;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+}
+
+::-webkit-input-placeholder {
+    position: relative;
+    color: #000000;
+    opacity: 40%;
+}
+
+.table-menu > i {
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+}
+
+.button-add button {
+    width: 131px;
+    color: #007BFF;
+    background-color: white;
+    font-family: Questrial;
+    border: 1px solid white;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: ease 0.5s;
+}
+
+.button-add button:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+.pagination {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-space {
+    margin-top: 2px;
+    display: flex;
+    margin-right: 10px;
+}
+.search-space input{
+    padding-left: 10px;
+}
+
+.table-menu h1 {
+    color: white;
+    font-size: 25px;
+    margin-right: auto;
+}
+
+.page-link {
+    background-color: #046de1;
+    color: white;
+    transition: ease 0.5s;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    
+}
+
+.page-link:hover {
+    background-color: #869cdd;
+    color: white;
+    transform: scale(1.1);
+}
+
+.btn {
+    transition: ease 0.8s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+@media only screen and (max-width: 507px) {
+    .body-table {
+        display: flex;
+        align-items: center;
+    }
+    .background-table{
+        width: 70vh;
+        min-width: 70vh;
+    }
+    .search-space {
+        margin-top: 2px;
+        display: flex;
+        margin-right: 10px;
+    }
+    .search-space a > i{
+        font-size: 16px;
+        position: relative;
+        bottom: 1px;
+    }
+    .search-space input{
+        width: 17vh;
+        height: 20px;
+        font-size: 12px;
+    }
+    .table-menu h1{
+        font-size: 15px;
+        position: relative;
+        left: 10px;
+        top: 2px;
+    }
+    .button-add button{
+        width: 50px;
+        height: 20px;
+    }
+    .btn-group button{
+        width: 1px;
+        height: 15px;
+    }
+    .btn-group button > i{
+        position: relative;
+        right: 5px;
+        font-size: 10px;
+        bottom: 14px;
+    }
+    th{
+        font-size: 10px;
+    }
+    .table td, .table th{
+        padding: 0.1rem;
+    }
+    td{
+        font-size: 10px;
+    }
+    .page-link{
+    }
+
+}
+@media only screen and (min-width: 507px) and (max-width: 1023px){
+    .body-table {
+        display: flex;
+        align-items: center;
+    }
+    .TableContainer {
+        width: 70vh;
+        position: relative;
+        bottom: 15vh;
+    }
+    .search-space {
+        margin-top: 2px;
+        display: flex;
+        margin-right: 10px;
+    }
+    .search-space a > i{
+        font-size: 16px;
+        position: relative;
+        bottom: 1px;
+    }
+    .search-space input{
+        width: 17vh;
+        height: 20px;
+        font-size: 12px;
+    }
+    .table-menu h1{
+        font-size: 15px;
+        position: relative;
+        left: 10px;
+        top: 2px;
+    }
+    .button-add button{
+        width: 50px;
+        height: 20px;
+    }
+    .btn-group button{
+        width: 1px;
+        height: 15px;
+    }
+    .btn-group button > i{
+        position: relative;
+        right: 5px;
+        font-size: 10px;
+        bottom: 14px;
+    }
+    th{
+        font-size: 10px;
+    }
+    .table td, .table th{
+        padding: 0.1rem;
+    }
+    td{
+        word-wrap: break-word;
+        font-size: 10px;
+        max-width: 10px;
+    
+    }
+    .page-link{
+        height: 10px;
+        width: 20px;
+    }
+    .page-link h1{
+        font-size: 12px;
+        position: relative;
+        bottom: 8px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Estilos específicos para telas entre 768px e 1023px */
+}
+@media only screen and (min-width: 1024px) {
+    /* Estilos específicos para telas maiores que 1024px */
+}
