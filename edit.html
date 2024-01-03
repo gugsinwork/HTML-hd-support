@@ -1,0 +1,117 @@
+<body class="body-table">
+    <div class="TableContainer">
+        <div class="table-menu">
+            <form asp-action="Index" asp-controller="CadastroEquip">
+                <a role="button">
+                    <i class="bi bi-search"></i>
+                </a>
+                <input type="search" placeholder="Faça sua pesquisa" name="SearchString">
+            </form>
+            <span>
+                <a asp-action="Index">
+                    <i class="bi bi-x-lg"></i>
+                </a>     
+            </span>
+        </div>
+        <div class="background-table">
+        <table id="table-position" class="table table-hover">
+            <thead class="thead-style">
+                <tr class="tr-style">
+                    <th>
+                        Id do patrimônio
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Modelo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Processador)
+                    </th>
+                    <th>
+                        Sistema Operacional
+                    </th>
+                    <th>
+                        Disponível
+                    </th>
+
+                    <th scope="col">
+                        <div class="button-add">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="@("#NovoEquipModal")" data-bs-url="@Url.Action($"NovoCadastro")">
+                                Adicionar
+                            </button>
+
+                            @await Html.PartialAsync("_NovoCadastroEquipPartialView", new HD_SUPPORT.Models.CadastroEquip())
+
+                        </div>
+                            
+                   </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr class="tbody-style">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdPatrimonio)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Modelo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Processador)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SistemaOperacionar)
+                        </td>
+                        <td>
+                            @if (item.Disponivel)
+                            {
+                                <text>Disponível</text>
+                            }
+                            else
+                            {
+                                <text>Indisponível</text>
+                            }
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="@("#EditarEquipModal" + item.Id.ToString())" data-bs-url="@Url.Action($"Atualizar/{item.Id}")">
+                                    <i class="bi bi-pencil-square"></i>
+                                </button>
+
+                                @await Html.PartialAsync("_EditEquipPartialView", item)
+
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="@("#DetalhesEquipModal" + item.Id.ToString())" data-bs-url="@Url.Action($"Detalhes/{item.Id}")">
+                                    <i class="bi bi-newspaper"></i>
+                                </button>
+
+                                @await Html.PartialAsync("_DetalhesEquipPartialView", item)
+
+                                <form asp-action="Excluir" asp-route-id="@item.Id">
+                                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+
+
+        <div class="pagination">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#"><i class="bi bi-arrow-left"></i></a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#"><i class="bi bi-arrow-right"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</body>
